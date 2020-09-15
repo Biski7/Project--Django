@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="hero mv-single-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+                    {% csrf_token %}
+<!--                    <label for="email-2">&ndash;&gt;-->
+<!--                    your email:-->
+<!--                    <input type="password" name="email" id="email-2" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />-->
+<!--                </label>-->
+                    <div class="row" >
+                         <label for="username-2" >
+                             Enter Username:{{ form.username }}
+                         </label>
+                    </div>
+
+                    <div class="row">
+                        <label for="password-2" >
+                            Enter password:{{ form.password }}
+                        </label>
+                    </div>
+                    <input type="submit" value="login">
+                </form>
+                <div>
+					<a href="#" >Forgot Password</a>
+                    <div>
+					<a href="/signup" >Register</a>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

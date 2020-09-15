@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+table, th, td {
+  border: 1px solid #50788a;
+}
+#t01 {
+  width: 100%;
+  background-color: #d1dade;
+   margin-left: auto;
+  margin-right: auto;
+  }
+</style>
+<div class="hero mv-single-hero">
+<!--	<div class="container">-->
+<!--		<div class="row">-->
+			<div class="col-md-12">
+              <table style="width:75%" id="t01" align="center">
+                    <tr>
+                        <th>#</th>
+                        <th >Name of the movie</th>
+                        <th>Ticket Quantities</th>
+                        <th>Single Price</th>
+                        <th>Total Price</th>
+                     </tr>
+                    <tr>
+                    {% for order_movie in object.movieitems.all %}
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ order_movie.movie.Title}}</td>
+                        <td>{{ order_movie.quantity}}
+                            <a href = "{{order_movie.add_one_ticket}}"><button >+</button></a>
+                            <a href = "{{order_movie.remove_one_ticket}}"><button >-</button></a>
+                            <a href = "{{order_movie.remove_all_tickets}}"><button >Delete</button></a>
+                        </td>
+                        <td>{{ order_movie.movie.Price}}</td>
+                        <td>{{ order_movie.final_price}}</td>
+                     </tr>
+                    {% endfor %}
+
+                <tr>
+                    <td colspan="4">GRAND TOTAL </td>
+                    <td> Rs.{{ object.get_total}}</td>
+                </tr>
+                  </table>
+				<div>
+					<a class="item item-2 yellowbtn" href="checkout">PROCEED TO CHECKOUT</a>
+				</div>
+             </div>
+<!--        </div>-->
+<!--    </div>-->
+</div>
+
+{% endblock %}
+
+<!--                <a href = "{{tickets.add_one_ticket}}"><button >+</button></a>-->
+<!--                      <a href = "{{tickets.remove_one_ticket}}"><button >-</button></a>-->
+<!--                      <a href = "{{tickets.remove_all_tickets}}"><button >Delete</button></a>-->
+
+
+

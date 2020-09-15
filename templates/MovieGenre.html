@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="movie-items">
+	<div class="container">
+		<div class="row ipad-width">
+
+			<div class="col-md-8">
+				<div class="title-hd">
+					<h2></h2>
+
+					<a href="#" class="viewall"><i class="ion-ios-arrow-right"></i></a>
+				</div>
+				<div class="title-hd">
+					<h2></h2>
+					<a href="#" class="viewall">View all <i class="ion-ios-arrow-right"></i></a>
+				</div>
+				<!--For Genre1-->
+				<div class="tabs">
+						<ul class="tab-links-2">
+							<li ><a href="#tab21">SUPERHERO</a></li>
+						</ul>
+						<div class="tab-content">
+				        <div id="tab21" class="tab active">
+				            <div class="row">
+				            	<div class="slick-multiItem">
+									{% for t in Genre1%}
+				            		<div class="slide-it">
+				            			<div class="movie-item">
+					            			<div class="mv-img">
+					            				<img src="{{ t.Image.url }}" alt="" width="185" height="284">
+					            			</div>
+					            			<div class="hvr-inner">
+					            				<a  href="{{ t.get_movie_url}} "> Read more <i class="ion-android-arrow-dropright"></i> </a>
+					            			</div>
+					            			<div class="title-in">
+					            				<h6><a href="#">{{ t.Title}}</a></h6>
+<!--					            				<p><i class="ion-android-star"></i><span>{{ t.Imbd_rating }}</span> /10</p>-->
+					            			</div>
+					            		</div>
+										<p><i class="ion-android-star"></i><span>{{ t.Imdb_rating }}</span> /10</p>
+				            		</div>
+									{% endfor %}
+				            	</div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<!--For Genre2-->
+				<div class="tabs">
+						<ul class="tab-links-2">
+							<li ><a href="#tab21">ACTION</a></li>
+						</ul>
+						<div class="tab-content">
+				        <div id="tab21" class="tab active">
+				            <div class="row">
+				            	<div class="slick-multiItem">
+									{% for t in Genre2%}
+				            		<div class="slide-it">
+				            			<div class="movie-item">
+					            			<div class="mv-img">
+					            				<img src="{{ t.Image.url }}" alt="" width="185" height="284">
+					            			</div>
+					            			<div class="hvr-inner">
+					            				<a  href="{{ t.get_movie_url}} "> Read more <i class="ion-android-arrow-dropright"></i> </a>
+					            			</div>
+					            			<div class="title-in">
+					            				<h6><a href="#">{{ t.Title}}</a></h6>
+<!--					            				<p><i class="ion-android-star"></i><span>{{ t.Imbd_rating }}</span> /10</p>-->
+					            			</div>
+					            		</div>
+										<p><i class="ion-android-star"></i><span>{{ t.Imdb_rating }}</span> /10</p>
+				            		</div>
+									{% endfor %}
+				            	</div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<!--For Genre3-->
+				<div class="tabs">
+						<ul class="tab-links-2">
+							<li ><a href="#tab21">COMEDY</a></li>
+						</ul>
+						<div class="tab-content">
+				        <div id="tab21" class="tab active">
+				            <div class="row">
+				            	<div class="slick-multiItem">
+									{% for t in Genre3%}
+				            		<div class="slide-it">
+				            			<div class="movie-item">
+					            			<div class="mv-img">
+					            				<img src="{{ t.Image.url }}" alt="" width="185" height="284">
+					            			</div>
+					            			<div class="hvr-inner">
+					            				<a  href="{{ t.get_movie_url}} "> Read more <i class="ion-android-arrow-dropright"></i> </a>
+					            			</div>
+					            			<div class="title-in">
+					            				<h6><a href="#">{{ t.Title}}</a></h6>
+<!--					            				<p><i class="ion-android-star"></i><span>{{ t.Imbd_rating }}</span> /10</p>-->
+					            			</div>
+					            		</div>
+										<p><i class="ion-android-star"></i><span>{{ t.Imdb_rating }}</span> /10</p>
+				            		</div>
+									{% endfor %}
+				            	</div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<!--For Genre4 and so on-->
+				<div class="tabs">
+						<ul class="tab-links-2">
+							<li ><a href="#tab21">SCI-FY</a></li>
+						</ul>
+						<div class="tab-content">
+				        <div id="tab21" class="tab active">
+				            <div class="row">
+				            	<div class="slick-multiItem">
+									{% for t in Genre4%}
+				            		<div class="slide-it">
+				            			<div class="movie-item">
+					            			<div class="mv-img">
+					            				<img src="{{ t.Image.url }}" alt="" width="185" height="284">
+					            			</div>
+					            			<div class="hvr-inner">
+					            				<a  href="{{ t.get_movie_url}} "> Read more <i class="ion-android-arrow-dropright"></i> </a>
+					            			</div>
+					            			<div class="title-in">
+					            				<h6><a href="#">{{ t.Title}}</a></h6>
+<!--					            				<p><i class="ion-android-star"></i><span>{{ t.Imbd_rating }}</span> /10</p>-->
+					            			</div>
+					            		</div>
+										<p><i class="ion-android-star"></i><span>{{ t.Imdb_rating }}</span> /10</p>
+				            		</div>
+									{% endfor %}
+				            	</div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="tabs">
+						<ul class="tab-links-2">
+							<li ><a href="#tab21">ANIMATITON</a></li>
+						</ul>
+						<div class="tab-content">
+				        <div id="tab21" class="tab active">
+				            <div class="row">
+				            	<div class="slick-multiItem">
+									{% for t in Genre5%}
+				            		<div class="slide-it">
+				            			<div class="movie-item">
+					            			<div class="mv-img">
+					            				<img src="{{ t.Image.url }}" alt="" width="185" height="284">
+					            			</div>
+					            			<div class="hvr-inner">
+					            				<a  href="{{ t.get_movie_url}} "> Read more <i class="ion-android-arrow-dropright"></i> </a>
+					            			</div>
+					            			<div class="title-in">
+					            				<h6><a href="#">{{ t.Title}}</a></h6>
+<!--					            				<p><i class="ion-android-star"></i><span>{{ t.Imbd_rating }}</span> /10</p>-->
+					            			</div>
+					            		</div>
+										<p><i class="ion-android-star"></i><span>{{ t.Imdb_rating }}</span> /10</p>
+				            		</div>
+									{% endfor %}
+				            	</div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="tabs">
+						<ul class="tab-links-2">
+							<li ><a href="#tab21">DRAMA</a></li>
+						</ul>
+						<div class="tab-content">
+				        <div id="tab21" class="tab active">
+				            <div class="row">
+				            	<div class="slick-multiItem">
+									{% for t in Genre6%}
+				            		<div class="slide-it">
+				            			<div class="movie-item">
+					            			<div class="mv-img">
+					            				<img src="{{ t.Image.url }}" alt="" width="185" height="284">
+					            			</div>
+					            			<div class="hvr-inner">
+					            				<a  href="{{ t.get_movie_url}} "> Read more <i class="ion-android-arrow-dropright"></i> </a>
+					            			</div>
+					            			<div class="title-in">
+					            				<h6><a href="#">{{ t.Title}}</a></h6>
+<!--					            				<p><i class="ion-android-star"></i><span>{{ t.Imbd_rating }}</span> /10</p>-->
+					            			</div>
+					            		</div>
+										<p><i class="ion-android-star"></i><span>{{ t.Imdb_rating }}</span> /10</p>
+				            		</div>
+									{% endfor %}
+				            	</div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="tabs">
+						<ul class="tab-links-2">
+							<li ><a href="#tab21">HORROR</a></li>
+						</ul>
+						<div class="tab-content">
+				        <div id="tab21" class="tab active">
+				            <div class="row">
+				            	<div class="slick-multiItem">
+									{% for t in Genre7%}
+				            		<div class="slide-it">
+				            			<div class="movie-item">
+					            			<div class="mv-img">
+					            				<img src="{{ t.Image.url }}" alt="" width="185" height="284">
+					            			</div>
+					            			<div class="hvr-inner">
+					            				<a  href="{{ t.get_movie_url}} "> Read more <i class="ion-android-arrow-dropright"></i> </a>
+					            			</div>
+					            			<div class="title-in">
+					            				<h6><a href="#">{{ t.Title}}</a></h6>
+<!--					            				<p><i class="ion-android-star"></i><span>{{ t.Imbd_rating }}</span> /10</p>-->
+					            			</div>
+					            		</div>
+										<p><i class="ion-android-star"></i><span>{{ t.Imdb_rating }}</span> /10</p>
+				            		</div>
+									{% endfor %}
+				            	</div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="tabs">
+						<ul class="tab-links-2">
+							<li ><a href="#tab21">ADVENTURE</a></li>
+						</ul>
+						<div class="tab-content">
+				        <div id="tab21" class="tab active">
+				            <div class="row">
+				            	<div class="slick-multiItem">
+									{% for t in Genre8%}
+				            		<div class="slide-it">
+				            			<div class="movie-item">
+					            			<div class="mv-img">
+					            				<img src="{{ t.Image.url }}" alt="" width="185" height="284">
+					            			</div>
+					            			<div class="hvr-inner">
+					            				<a  href="{{ t.get_movie_url}} "> Read more <i class="ion-android-arrow-dropright"></i> </a>
+					            			</div>
+					            			<div class="title-in">
+					            				<h6><a href="#">{{ t.Title}}</a></h6>
+<!--					            				<p><i class="ion-android-star"></i><span>{{ t.Imbd_rating }}</span> /10</p>-->
+					            			</div>
+					            		</div>
+										<p><i class="ion-android-star"></i><span>{{ t.Imdb_rating }}</span> /10</p>
+				            		</div>
+									{% endfor %}
+				            	</div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}

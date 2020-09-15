@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags%}
+{% load mathfilters %}
+
+
+<html>
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+  background-image: url('static/images/uploads/slider-bg.jpg');
+  box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 110px 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-image: url('static/images/uploads/1.png');
+<!--  background-color: #c6ff1a;-->
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  opacity: 0.7;
+}
+
+</style>
+
+
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 offset-sn-3">
+                <h3>Checkout Form</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                            {% for message in messages %}
+                            <h3><font color="#782456">{{ message }}</font></h3>
+                            <a href="/"><font color="#fcba03">CLICK TO GO TO HOME PAGE</font></a>
+                            {% endfor %}
+                    {{ form|crispy}}
+                    <input type="submit" value="Save">
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+
+
+</head>
+</html>
+
+
+
+
+
+
+
+
+
+

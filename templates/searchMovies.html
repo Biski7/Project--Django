@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="hero mv-single-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- <h1> movie listing - list</h1>
+				<ul class="breadcumb">
+					<li class="active"><a href="#">Home</a></li>
+					<li> <span class="ion-ios-arrow-right"></span> movie listing</li>
+				</ul> -->
+			</div>
+		</div>
+	</div>
+</div>
+{% for search in search_Movie %}
+<div class="page-single movie-single movie_single">
+	<div class="container">
+		<div class="row ipad-width2">
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="movie-img sticky-sb">
+					<img src="{{ search.Image.url }}" alt="" >
+					<div class="movie-btn">
+						<div class="btn-transform transform-vertical red">
+							<div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> Watch Trailer</a></div>
+							<div><a href="{{ search.Video }}" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
+						</div>
+						<div class="btn-transform transform-vertical">
+<!--							<div><a href="#" class="item item-1 yellowbtn"> <i class="ion-card"></i> Buy ticket</a></div>-->
+							<div><a href="{{ search.add_to_cart }}" class="item item-2 yellowbtn"><i class="ion-card">Buy Ticket</i></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				<div class="movie-single-ct main-content">
+					<h1 class="bd-hd">{{ search.Title }}<span></span></h1>
+					<div class="social-btn">
+						<a href="#" class="parent-btn"><i class="ion-heart"></i> Add to Favorite</a>
+						<div class="hover-bnt">
+							<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>share</a>
+							<div class="hvr-item">
+								<a href="#" class="hvr-grow"><i class="ion-social-facebook"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-twitter"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-googleplus"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-youtube"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="movie-rate">
+						<div class="rate">
+							<i class="ion-android-star"></i>
+							<p><span>IMDB RATING = {{ search.Imdb_rating }}</span> /10<br>
+<!--								<p><span>IMDB RATING = {{ object.Rotten_tomatoes }}</span>%<br>-->
+<!--								<span class="rv">56 Reviews</span>-->
+							</p>
+						</div>
+						<div class="rate-star">
+							<p>Rate This Movie:  </p>
+							<i class="ion-ios-star"></i>
+							<i class="ion-ios-star"></i>
+							<i class="ion-ios-star"></i>
+							<i class="ion-ios-star"></i>
+							<i class="ion-ios-star"></i>
+							<i class="ion-ios-star"></i>
+							<i class="ion-ios-star"></i>
+							<i class="ion-ios-star"></i>
+							<i class="ion-ios-star-outline"></i>
+						</div>
+					</div>
+					<div class="movie-tabs">
+						<div class="tabs">
+							<ul class="tab-links tabs-mv">
+								<li class="active"><a href="#overview">Overview</a></li>
+<!--								<li><a href="#reviews"> Reviews</a></li>-->
+<!--								<li><a href="#cast">  Cast & Crew </a></li>-->
+<!--								<li><a href="#media"> Media</a></li> -->
+<!--								<li><a href="#moviesrelated"> Related Movies</a></li>                        -->
+							</ul>
+						    <div class="tab-content">
+						        <div id="overview" class="tab active">
+						            <div class="row">
+						            	<div class="col-md-8 col-sm-12 col-xs-12">
+						            		<p>{{ search.About }}</p>
+											<div class="mvsingle-item ov-item">
+<!--												overview-->
+<!--												<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image11.jpg" ><img src="images/uploads/image1.jpg" alt=""></a>-->
+<!--												<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image21.jpg" ><img src="{% static 'images/uploads/image2.jpg' %}" alt=""></a>-->
+<!--												<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image31.jpg" ><img src="images/uploads/image3.jpg" alt=""></a>-->
+											</div>
+											<div class="title-hd-sm">
+												<h4>cast</h4>
+											</div>
+											<!-- movie cast -->
+											<div class="mvcast-item">
+												<div class="cast-it">
+													<p>{{ search.Cast }}</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endfor %}
+
+{% endblock %}

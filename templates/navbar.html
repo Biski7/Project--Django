@@ -1,0 +1,130 @@
+{% load static %}
+
+
+
+<div id="preloader">
+    <img class="logo" src="{% static 'images/logo1.png' %}" alt="" width="119" height="58">
+    <div id="status">
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<div class="login-wrapper"  id="signup-content" value="sign-in" name = 'submit'>
+    <div class="login-content">
+        <a href="#" class="close">x</a>
+        <h3>sign up</h3>
+        <form method="POST" >
+			{% csrf_token %}
+			{% for message in messages %}
+			{{ message }}
+			{% endfor %}
+            <div class="row">
+                 <label for="username-2">
+                    Username:
+                    <input type="text" name="username" id="username-2" placeholder="Hugh Jackman"  required="required" />
+                </label>
+            </div>
+
+            <div class="row">
+                <label for="email-2">
+                    your email:
+                    <input type="text" name="email" id="email-2" placeholder=""  required="required" />
+                </label>
+            </div>
+             <div class="row">
+                <label for="password-2">
+                    Password:
+                    <input type="password" name="password" id="password-2" placeholder=""  required="required" />
+                </label>
+            </div>
+             <div class="row">
+                <label for="repassword-2">
+                    re-type Password:
+                    <input type="password" name="password1" id="repassword-2" placeholder=""  required="required" />
+                </label>
+            </div>
+           <div class="row">
+             <button type="submit">sign up</button>
+           </div>
+        </form>
+    </div>
+</div>
+<!--end of signup form popup-->
+
+<!-- BEGIN | Header -->
+<header class="ht-header">
+	<div class="container">
+		<nav class="navbar navbar-default navbar-custom">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header logo">
+				    <div class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					    <span class="sr-only">Toggle navigation</span>
+					    <div id="nav-icon1">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+				    </div>
+				    <a href="index-2.html"><img class="logo" src="{% static 'images/logo1.png' %}" alt="" width="119" height="58"></a>
+			    </div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav flex-child-menu menu-left">
+						<li class="hidden">
+							<a href="#page-top"></a>
+						</li>
+						<li class="dropdown first">
+							<a href="/" >
+							Home
+							</a>
+						</li>
+						<li class="dropdown first">
+							<a href="/mGenre" >
+							movies
+							</a>
+							<ul class="dropdown-menu level1">
+								<li class="dropdown">
+							</ul>
+						</li>
+						<li class="dropdown first">
+							<a href="/tGenre">TV-SERIES</a>
+					</ul>
+
+					<ul class="nav navbar-nav flex-child-menu menu-right">
+
+
+
+						{% if user.is_authenticated %}
+						<li><font color="Red"> Hi!{{ user.username }}</font></li>
+						<li ><a href="/accounts/logout">LOG OUT</a></li>
+						{% else %}
+						<li ><a href="/accounts/login">LOG IN</a></li>
+
+
+						<li ><a href="/signup">sign up</a></li>
+						{% endif %}
+					</ul>
+				</div>
+
+	    </nav>
+
+	    <!-- top search form -->
+
+	    <div class="top-search">
+			<div class="col-md-6">
+				<form action="{% url 'home:searchmovies' %}" method="GET">
+					<input type="text" placeholder="Search Movies Here" name="query">
+<!--					<input type="submit" value=" " >-->
+				</form>
+			</div>
+			<div class="col-md-6">
+				<form action="{% url 'home:searchseries' %}" method="GET">
+					<input type="text" placeholder="Search TV Series Here" name="query">
+<!--					<input type="submit" value=" " >-->
+				</form>
+
+			</div>
+		</div>
+</header>
+<!-- END | Header -->
